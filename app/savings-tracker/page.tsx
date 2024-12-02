@@ -1,11 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { useRouter } from "next/navigation"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
-import { useRouter } from "next/navigation"
 
 export default function SavingsTracker() {
   const router = useRouter()
@@ -19,16 +19,12 @@ export default function SavingsTracker() {
     e.preventDefault()
   }
 
-  const handleLogout = () => {
-    router.push("/")
-  }
-
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="flex justify-between items-center">
           <CardTitle className="text-2xl font-bold text-center text-blue-600">My Savings Tracker</CardTitle>
-          <Button onClick={handleLogout} variant="outline" className="text-red-500 hover:text-red-600">
+          <Button onClick={() => router.push("/")} variant="outline" className="text-red-500 hover:text-red-600">
             Logout
           </Button>
         </CardHeader>
@@ -36,7 +32,7 @@ export default function SavingsTracker() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                What's your savings goal?
+                What&apos;s your savings goal?
               </Label>
               <Input
                 id="goal"
@@ -82,7 +78,7 @@ export default function SavingsTracker() {
             <p className="text-lg font-medium text-gray-700">
               {remainingAmount > 0
                 ? `Keep going! You need $${remainingAmount} more to reach your goal.`
-                : "Congratulations! You've reached your savings goal! 🎉"}
+                : "Congratulations! You&apos;ve reached your savings goal! 🎉"}
             </p>
           </div>
         </CardContent>
