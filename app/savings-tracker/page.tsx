@@ -19,6 +19,9 @@ export default function SavingsTracker() {
     e.preventDefault()
   }
 
+  const goalLabel = `What's your savings goal?`
+  const successMessage = `Congratulations! You've reached your savings goal! 🎉`
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
@@ -32,7 +35,7 @@ export default function SavingsTracker() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                What&apos;s your savings goal?
+                {goalLabel}
               </Label>
               <Input
                 id="goal"
@@ -78,7 +81,7 @@ export default function SavingsTracker() {
             <p className="text-lg font-medium text-gray-700">
               {remainingAmount > 0
                 ? `Keep going! You need $${remainingAmount} more to reach your goal.`
-                : "Congratulations! You&apos;ve reached your savings goal! 🎉"}
+                : successMessage}
             </p>
           </div>
         </CardContent>
