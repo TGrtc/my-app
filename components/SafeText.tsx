@@ -1,3 +1,4 @@
 export const SafeText = ({ children }: { children: string }) => {
-  return <>{children.replace(/'/g, "'")}></>;
+  const safeText = children.split("'").join("&apos;");
+  return <span dangerouslySetInnerHTML={{ __html: safeText }} />;
 }; 
