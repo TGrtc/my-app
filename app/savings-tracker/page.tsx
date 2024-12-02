@@ -35,7 +35,7 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                {`What's your savings goal?`}
+                What&apos;s your savings goal?
               </Label>
               <Input
                 id="goal"
@@ -81,7 +81,7 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
             <p className="text-lg font-medium text-gray-700">
               {remainingAmount > 0
                 ? `Keep going! You need $${remainingAmount} more to reach your goal.`
-                : `Congratulations! You've reached your savings goal! 🎉`}
+                : "Congratulations! You&apos;ve reached your savings goal! 🎉"}
             </p>
           </div>
         </CardContent>
