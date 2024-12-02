@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
 import { SafeText } from "@/components/SafeText"
+import { TEXT } from "@/lib/text"
 
 interface SavingsTrackerProps {
   onLogout: () => void
@@ -36,7 +37,7 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                <SafeText>{"What's your savings goal?"}</SafeText>
+                {TEXT.SAVINGS_GOAL_LABEL}
               </Label>
               <Input
                 id="goal"
@@ -80,11 +81,9 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
 
           <div className="mt-4 text-center">
             <p className="text-lg font-medium text-gray-700">
-              {remainingAmount > 0 ? (
-                `Keep going! You need $${remainingAmount} more to reach your goal.`
-              ) : (
-                <SafeText>{"Congratulations! You've reached your savings goal! 🎉"}</SafeText>
-              )}
+              {remainingAmount > 0
+                ? `Keep going! You need $${remainingAmount} more to reach your goal.`
+                : TEXT.SAVINGS_SUCCESS}
             </p>
           </div>
         </CardContent>
