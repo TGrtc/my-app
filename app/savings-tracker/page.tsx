@@ -5,12 +5,10 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 import { Label } from "@/components/ui/label"
+import { useRouter } from "next/navigation"
 
-interface SavingsTrackerProps {
-  onLogout: () => void
-}
-
-export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
+export default function SavingsTracker() {
+  const router = useRouter()
   const [goal, setGoal] = useState<number>(0)
   const [currentSavings, setCurrentSavings] = useState<number>(0)
 
@@ -21,12 +19,16 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
     e.preventDefault()
   }
 
+  const handleLogout = () => {
+    router.push("/")
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 to-green-100 flex items-center justify-center p-4">
       <Card className="w-full max-w-md">
         <CardHeader className="flex justify-between items-center">
           <CardTitle className="text-2xl font-bold text-center text-blue-600">My Savings Tracker</CardTitle>
-          <Button onClick={onLogout} variant="outline" className="text-red-500 hover:text-red-600">
+          <Button onClick={handleLogout} variant="outline" className="text-red-500 hover:text-red-600">
             Logout
           </Button>
         </CardHeader>
