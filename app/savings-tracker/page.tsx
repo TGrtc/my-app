@@ -35,7 +35,7 @@ export default function SavingsTracker({ onLogout }: SavingsTrackerProps) {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                What&apos;s your savings goal?
+                {"What's your savings goal?"}
               </Label>
               <Input
                 id="goal"
