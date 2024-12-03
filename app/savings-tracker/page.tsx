@@ -35,7 +35,7 @@ export default function SavingsTracker() {
           <form onSubmit={handleSubmit} className="space-y-4">
             <div>
               <Label htmlFor="goal" className="text-lg font-medium text-gray-700">
-                {goalLabel}
+                What&apos;s your savings goal?
               </Label>
               <Input
                 id="goal"
@@ -81,7 +81,7 @@ export default function SavingsTracker() {
             <p className="text-lg font-medium text-gray-700">
               {remainingAmount > 0
                 ? `Keep going! You need $${remainingAmount} more to reach your goal.`
-                : successMessage}
+                : "Congratulations! You&apos;ve reached your savings goal! 🎉"}
             </p>
           </div>
         </CardContent>
