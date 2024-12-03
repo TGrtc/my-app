@@ -6,9 +6,6 @@ const nextConfig = {
   poweredByHeader: false,
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['localhost'],
-  },
   async headers() {
     return [
       {
@@ -26,6 +23,10 @@ const nextConfig = {
             key: 'Strict-Transport-Security',
             value: 'max-age=31536000; includeSubDomains',
           },
+          {
+            key: 'X-DNS-Prefetch-Control',
+            value: 'on'
+          }
         ],
       },
     ]
